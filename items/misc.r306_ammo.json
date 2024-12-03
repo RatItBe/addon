@@ -15,12 +15,8 @@
             "minecraft:display_name": {
                 "value":"R306 탄창 [§aⓧ§f]§r"
             },
-            "minecraft:allow_off_hand": false,
-            "minecraft:icon": "R306_ammo",
-            "minecraft:projectile": {
-                "minimum_critical_power": 1.25,
-                "projectile_entity": "arrow"
-            }
+            "minecraft:allow_off_hand": true,
+            "minecraft:icon": "R306_ammo"
         }
     }
 }

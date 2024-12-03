@@ -12,8 +12,13 @@ system.run(() => {
 // 아이템 사용 시 실행될 코드
 import { itemUse } from "itemUse/index";
 world.afterEvents.itemUse.subscribe((eventData) => {
-    const player = eventData.source
     itemUse(eventData);
+});
+
+// 충전형 아이템 사용 시 실행될 코드
+import { itemReleaseUse } from "itemReleaseUse/index";
+world.afterEvents.itemReleaseUse.subscribe((eventData) => {
+    itemReleaseUse(eventData);
 });
 
 //플레이어 스폰 시 실행될 코드
@@ -26,12 +31,6 @@ world.afterEvents.playerSpawn.subscribe((eventData) => {
 import { playerInteractWithBlock } from "playerInteractWithBlock/index";
 world.beforeEvents.playerInteractWithBlock.subscribe((eventData) => { 
     playerInteractWithBlock(eventData);
-});
-
-system.runInterval(() => {
-    for (const player of world.getAllPlayers()) {
-        const playerMove = player.getComponent("minecraft:movement");
-    }
 });
 
 //게임 내내 반복될 코드들 (20틱에 1번)
