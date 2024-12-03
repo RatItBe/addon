@@ -1,0 +1,130 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "fs:r306_bullet",
+            "runtime_identifier":"minecraft:arrow",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "despawn":{
+                "minecraft:instant_despawn":{}
+            },
+            "silver":{
+                "minecraft:projectile": {
+                    "on_hit": {
+                        "mob_effect": {
+                            "effect": "slowness",
+                            "durationeasy": 100,
+                            "durationnormal": 100,
+                            "durationhard": 100,
+                            "amplifier": 1,
+                            "visible":true
+                        },
+                        "impact_damage": {
+                            "damage": 11,
+                            "knockback": false,
+                            "destroy_on_hit": false,
+                            "semi_random_diff_damage":false
+                        },
+                        "stick_in_ground": {
+                            "shake_time": 0.35
+                        }
+                    },
+                    "ignored_entities": {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "on_ground",
+                                    "value": false
+                                }
+                            ]
+                        }
+                    },
+                    "power": 7,
+                    "gravity": 0.03,
+                    "inertia": 1,
+                    "uncertaintyBase": 4,
+                    "uncertaintyMultiplier": 0,
+                    "anchor": 1,
+                    "offset": [
+                        0,
+                        -0.1,
+                        0
+                    ],
+                    "reflectOnHurt": false,
+                    "multiple_targets": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:movement.basic": {},
+            "minecraft:projectile": {
+                "on_hit": {
+                    "mob_effect": {
+                        "effect": "slowness",
+                        "durationeasy": 100,
+                        "durationnormal": 100,
+                        "durationhard": 100,
+                        "amplifier": 1,
+                        "visible":true
+                    },
+                    "impact_damage": {
+                        "damage": 7,
+                        "knockback": false,
+                        "destroy_on_hit": false,
+                        "semi_random_diff_damage":false
+                    },
+                    "stick_in_ground": {
+                        "shake_time": 0.35
+                    }
+                },
+                "power": 7,
+                "gravity": 0.03,
+                "inertia": 1,
+                "uncertaintyBase": 4,
+                "uncertaintyMultiplier": 0,
+                "anchor": 1,
+                "offset": [
+                    0,
+                    -0.1,
+                    0
+                ],
+                "reflectOnHurt": false,
+                "multiple_targets": true
+            },
+            "minecraft:scale": {
+                "value": 0.6
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 0.5
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true,
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "on_ground",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 80.0,
+                    "max_dropped_ticks": 10,
+                    "use_motion_prediction_hints": true
+                }
+            }
+        }
+    }
+}
