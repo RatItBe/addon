@@ -1,0 +1,30 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fs:shotgun_pellet",
+      "materials": {
+	    "default": "entity"
+	    },
+      "textures": {
+        "default": "textures/entity/shell"
+      },
+      "geometry": {
+        "default": "geometry.h8r_last"
+      },
+      "render_controllers": [ "controller.render.shell" ],
+      "particle_effects": {
+        "flame": "minecraft:basic_smoke_particle"
+      },
+      "animations": {        
+        "h8r": "animation.h8r.last",
+        "h8r_controller":"controller.animation.h8r.last"
+      },
+      "scripts": {
+        "animate": [          
+          "h8r_controller"
+        ]
+      }
+    }
+  }
+}

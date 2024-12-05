@@ -1,0 +1,68 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sentinel_bullet.smoke": {
+			"loop": true,
+			"sound_effects": {
+				"0.0": [
+					{
+						"effect": "spawned"
+					},
+					{
+						"effect": "reload"
+					}
+				]
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "smoke",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.shotgun_pellet": {
+			"loop": true,
+			"sound_effects": {
+				"0.0": {
+					"effect": "spawned"
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "smoke",
+						"locator": "particle"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle2"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle3"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle4"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle5"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle6"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle7"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle8"
+					}
+				]
+			}
+		}
+	}
+}

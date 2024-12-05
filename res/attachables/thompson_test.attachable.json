@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "fs:thompson_test",
+			"render_controllers": ["controller.render.item_default"],
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/entity/r306",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.thompson_test"
+			},
+			"animations": {
+				"first_person_hold": "animation.thompson_test.first_person_hold",
+				"third_person_hold": "animation.thompson_test.third_person_hold",
+				"aim":"animation.thompson_test.aim"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"first_person_hold": "c.is_first_person && !q.is_sneaking"
+					},
+					{
+						"third_person_hold": "!c.is_first_person"
+					},
+					{
+						"aim":"q.is_sneaking && c.is_first_person"
+					}
+				]
+			}
+		}
+	}
+}

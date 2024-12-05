@@ -1,0 +1,33 @@
+{
+  "format_version": "1.18.31",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:mhradio",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/entity/m_radio_h",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.military_hradio"
+      },
+      "animations":{
+        "fpp_hold":"animation.m_radio_h.fpp",
+        "tpp_hold":"animation.m_radio_h.tpp",
+        "using":"animation.military_radio_h_using",
+        "fpp_or_tpp":"controller.animation.radio.wield",
+        "charging":"animation.m_radio_h.charging"
+      },
+      "scripts":{
+        "animate":[
+          "fpp_or_tpp"
+        ]
+      },
+      
+      "render_controllers": [ "controller.render.item_default" ]
+    }
+  }
+}

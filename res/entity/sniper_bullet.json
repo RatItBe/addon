@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fs:sniper_bullet",
+      "materials": {
+	    "default": "arrow"
+	  },
+      "textures": {
+        "default": "textures/entity/shell"
+      },
+      "geometry": {
+        "default": "geometry.shell"
+      },
+      "render_controllers": [ "controller.render.shell" ]
+    }
+  }
+}

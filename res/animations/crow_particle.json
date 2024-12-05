@@ -1,0 +1,22 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.crow.particle": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "particle_2",
+					"locator": "tail_particle"
+				},
+				"0.1":{
+					"effect":"particle_2",
+					"locator": "l_wing_particle"
+				},
+				"0.2":{
+					"effect":"particle_2",
+					"locator": "r_wing_particle"
+				}
+			}
+		}
+	}
+}

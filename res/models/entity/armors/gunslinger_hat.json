@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"geometry.gunslinger_hat": {
+		"texturewidth": 128,
+		"textureheight": 45,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 3,
+		"visible_bounds_offset": [0, 1.5, 0],
+		"bones": [
+			{
+				"name": "helmet",
+				"pivot": [0, 24, 0]
+			},
+			{
+				"name": "hat",
+				"parent": "helmet",
+				"pivot": [0, 24, 0.4],
+				"cubes": [
+					{"origin": [-7, 29.56032, -7.02019], "size": [14, 0, 14], "uv": [0, 0]},
+					{"origin": [-4.5, 29.57032, -4.52019], "size": [9, 3, 9], "uv": [56, 0], "inflate": 0.2}
+				]
+			},
+			{
+				"name": "bone3",
+				"parent": "hat",
+				"pivot": [4.6, 28.47032, 2.87981],
+				"rotation": [15, 0, 0],
+				"cubes": [
+					{"origin": [4.8, 30.43458, -1.02742], "size": [0, 7, 4], "uv": [0, 31]}
+				]
+			},
+			{
+				"name": "bone2",
+				"parent": "hat",
+				"pivot": [-7, 32.46032, 1.07981],
+				"rotation": [0, 0, -32.5],
+				"cubes": [
+					{"origin": [-8.55763, 30.01533, -7.02019], "size": [0, 3, 14], "uv": [28, 14]}
+				]
+			},
+			{
+				"name": "bone",
+				"parent": "hat",
+				"pivot": [7.80679, 32.22587, 1.07981],
+				"rotation": [0, 0, 32.5],
+				"cubes": [
+					{"origin": [8.55901, 29.54512, -7.02019], "size": [0, 3, 14], "uv": [0, 14]}
+				]
+			}
+		]
+	}
+}

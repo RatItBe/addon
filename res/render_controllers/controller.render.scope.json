@@ -1,0 +1,10 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.reticle": {
+			"textures": [ "Texture.reticle" ],
+			"geometry": "Geometry.reticle",
+			"materials": [ { "*": "Material.reticle" } ]
+		}
+	}
+}

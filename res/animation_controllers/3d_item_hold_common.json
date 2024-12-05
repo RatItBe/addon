@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.3ditem_common.wield": {
+			"initial_state": "first_person",
+			"states": {
+				"first_person": {
+					"animations": ["fpp_hold", "using"],
+					"transitions": [
+						{"third_person": "!c.is_first_person"}
+					]
+				},
+				"third_person": {
+					"animations": ["tpp_hold", "using"],
+					"transitions": [
+						{"first_person": "c.is_first_person"}
+					]
+				}
+			}
+		},
+		"controller.animation.radio.wield": {
+			"initial_state": "first_person",
+			"states": {
+				"first_person": {
+					"animations": [
+						"fpp_hold",
+						{"using": "q.item_is_charged"},
+						{"charging": "q.is_using_item && q.item_remaining_use_duration > 3"}
+					],
+					"transitions": [
+						{"third_person": "!c.is_first_person"}
+					]
+				},
+				"third_person": {
+					"animations": [
+						"tpp_hold",
+						{"using": "q.item_is_charged"},
+						{"charging": "q.is_using_item && q.item_remaining_use_duration > 3"}
+					],
+					"transitions": [
+						{"first_person": "c.is_first_person"}
+					]
+				}
+			}
+		}
+	}
+}

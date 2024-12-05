@@ -1,0 +1,63 @@
+{
+    "resource_pack_name" : "Friedsoboro",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "R306": {
+            "textures": "textures/items/R306"
+        },
+        "R306_E": {
+            "textures": "textures/items/R306_E"
+        },
+        "R306_ammo":{
+            "textures": "textures/items/R306_ammo"
+        },
+        "p1545": {
+            "textures": "textures/items/p1545"
+        },
+        "p1545_ammo": {
+            "textures": "textures/items/p1545_ammo"
+        },
+		"radio_backpack": {
+			"textures": ["textures/items/radio_backpack_icon"]
+		},
+		"radio_handheld": {
+			"textures": ["textures/items/military_radio_h"]
+		},
+		"sentinel": {
+			"textures": ["textures/items/sentinel"]
+		},
+		"sniper_ammo": {
+			"textures": ["textures/items/sniper_ammo"]
+		},
+		"shotty": {
+			"textures": ["textures/items/shotty"]
+		},
+		"pump_action": {
+			"textures": ["textures/items/pump_action"]
+		},
+		"shotgun_ammo": {
+			"textures": ["textures/items/shotgun_shell"]
+		},
+		"shotgun_belt": {
+			"textures": ["textures/items/shotgun_belt"]
+		},
+        "gunslinger_coat": {
+			"textures": ["textures/items/gunslinger_coat"]
+		},
+		"gunslinger_hat": {
+			"textures": ["textures/items/gunslinger_hat"]
+		},
+		"scout_hat": {
+			"textures": ["textures/items/scout_hat"]
+		},
+		"scout_vest": {
+			"textures": ["textures/items/scout_vest"]
+		},
+		"scout_pants": {
+			"textures": ["textures/items/scout_pants"]
+		},
+		"scout_boots": {
+			"textures": ["textures/items/scout_boots"]
+		}
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fs:crow_bullet",
+      "materials": { "default": "entity_emissive_alpha" },
+      "textures": {
+        "default": "textures/entity/crow"
+      },
+      "geometry": {
+        "default": "geometry.crow"
+      },
+      "animations": {
+        "fly":"animation.crow.fly",
+        "particle":"animation.crow.particle",
+        "controller":"controller.animation.crow_beh"
+      },
+      "scripts": {        
+        "animate": [
+          "controller"
+        ]
+      },
+      "render_controllers": [ "controller.render.iron_golem" ],
+      "particle_effects": {
+        "particle_1": "minecraft:water_evaporation_actor_emitter",
+        "particle_2": "minecraft:phantom_trail_particle",
+        "particle_3": "minecraft:mobflame_emitter"
+      }
+    }
+  }
+}

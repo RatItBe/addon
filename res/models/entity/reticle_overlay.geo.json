@@ -1,0 +1,56 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.reticle",
+				"texture_width": 130,
+				"texture_height": 130,
+				"visible_bounds_width": 17,
+				"visible_bounds_height": 8,
+				"visible_bounds_offset": [0, 2, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"binding": "q.item_slot_to_bone_name(c.item_slot)"
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [-3, 24.75, 3.5]
+				},
+				{
+					"name": "reticle",
+					"parent": "head",
+					"pivot": [-3, 24.8, 5],
+					"cubes": [
+						{
+							"origin": [-35.5, -7.7, 5],
+							"size": [65, 65, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [65, 65]},
+								"east": {"uv": [0, 0], "uv_size": [0, 65]},
+								"south": {"uv": [0, 0], "uv_size": [65, 65]},
+								"west": {"uv": [65, 0], "uv_size": [0, 65]},
+								"up": {"uv": [0, 0], "uv_size": [65, 0]},
+								"down": {"uv": [65, 0], "uv_size": [65, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.left_hand.wield": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{"fpp_hold":"c.is_first_person"}
+					]
+				}
+			}
+		}
+	}
+}

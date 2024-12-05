@@ -1,0 +1,41 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"fs_bolt_action": {
+			"category": "player",
+			"sounds": [
+				"sounds/bolt_action"
+			]
+		},
+		"fs_silenced_shot": {
+			"category": "player",
+			"sounds": [
+				"sounds/silenced_shot"
+			]
+		},
+		"fs_sniper_single": {
+			"category": "player",
+			"sounds": [
+				"sounds/sniper_single"
+			]
+		},
+		"fs_shotgun_fire": {
+			"category": "player",
+			"sounds": [
+				"sounds/shotgun_fire"
+			]
+		},
+		"fs_helix_charging": {
+			"category": "player",
+			"sounds": [
+				"sounds/helix_charging"
+			]
+		},
+		"fs.boom": {
+			"category": "player",
+			"sounds": [
+				"sounds/boom"
+			]
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.left_handed.fpp": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"body_armor": {
+					"scale": 0
+				},
+				"backpack": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

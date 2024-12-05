@@ -1,0 +1,97 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.type23.fpp": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"gun": {
+					"rotation": [-20, 60, -60],
+					"position": [-6.2832, 5.36012, 2.51704],
+					"scale": [
+						"2-math.abs(2*q.is_sneaking*q.is_using_item*query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped'))",
+						"1.7-math.abs(1.7*q.is_sneaking*q.is_using_item*query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped'))",
+						"2-math.abs(2*q.is_sneaking*q.is_using_item*query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped'))"
+					]
+				},
+				"laser_sight": {
+					"scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fs:laser_sight')"
+				},
+				"laser": {
+					"position": [0, 15.2, 0],
+					"scale": [1, 300, 1]
+				},
+				"angle_grip": {
+					"scale": 1
+				},
+				"scope": {
+					"scale": "query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped')"
+				},
+				"head": {
+					"position": [0.025, 3.5, -8],
+					"scale": "math.abs(q.is_sneaking*1*q.is_using_item*query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped'))"
+				},
+				"dot": {
+					"position": [0, 0, 0],
+					"scale": 0.15
+				},
+				"gun3": {
+					"scale": "math.abs(q.is_sneaking*0*q.is_using_item*query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped'))"
+				}
+			}
+		},
+		"animation.type23.tpp": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"position": [0, 2.5, 1.1],
+					"scale": 1.5
+				},
+				"laser_sight": {
+					"scale": "1*query.equipped_item_any_tag('slot.weapon.mainhand','fs:laser_sight')"
+				},
+				"laser": {
+					"position": [0, "5*q.is_using_item", 0],
+					"scale": [1, "100*q.is_using_item*q.is_sneaking", 1]
+				},
+				"head": {
+					"scale": 0
+				},
+				"scope": {
+					"scale": "1*query.equipped_item_any_tag('slot.weapon.mainhand','fs:scoped')"
+				}
+			}
+		},
+		"animation.type23.fire": {
+			"loop": true,
+			"bones": {
+				"gun": {
+					"position": [0, "math.abs(q.is_using_item*1)", 0]
+				},
+				"particle": {
+					"position": [0, -6, 0]
+				},
+				"barrel": {
+					"position": [0, "math.abs(q.is_using_item*1)", 0]
+				}
+			}
+		},
+		"animation.type23.fpp_aim": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"gun": {
+					"scale": 0
+				},
+				"dot": {
+					"scale": 0
+				},
+				"gun3": {
+					"position": [0, 3.5, 0],
+					"scale": 1
+				},
+				"scope_inside": {
+					"scale": 0
+				}
+			}
+		}
+	}
+}

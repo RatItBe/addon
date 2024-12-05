@@ -1,0 +1,43 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.pump_action.wield": {
+			"initial_state": "first_person",
+			"states": {
+				"first_person": {
+					"animations": ["fpp_hold"],
+					"transitions": [
+						{"third_person": "!c.is_first_person"}
+					]
+				},
+				"third_person": {
+					"animations": ["tpp_hold"],
+					"transitions": [
+						{"first_person": "c.is_first_person"}
+					]
+				}
+			}
+		},
+		"controller.animation.pump_action.shoot": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{"ready": "q.is_using_item"}
+					]
+				},
+				"shot": {
+					"animations": ["shot"],
+					"transitions": [
+						{"idle": "q.all_animations_finished && !q.is_using_item"}
+					]
+				},
+				"ready": {
+					"transitions": [
+						{"shot": "!q.is_using_item"}
+					]
+				}
+			}
+		}
+	}
+}

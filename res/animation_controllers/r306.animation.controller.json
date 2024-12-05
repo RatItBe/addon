@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.r306.aim": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"fpp_hold"
+					],
+					"transitions": [
+						{
+							"fpp_aim": "c.is_first_person && q.is_sneaking"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"fpp_aim": {
+					"animations": [
+						"fpp_aim"
+					],
+					"transitions": [
+						{
+							"default": "!c.is_first_person || !q.is_sneaking"
+						}
+					],
+					"blend_transition": 0.4
+				}
+			}
+		},
+		"controller.animation.r306.shoot": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [{
+						"boom_fpp": "query.cooldown_time_remaining > 0.0 && c.is_first_person"
+					},
+					{
+						"boom_tpp": "query.cooldown_time_remaining > 0.0 && !c.is_first_person"
+					}]
+				},
+				"boom_fpp": {
+					"animations": [
+						"shoot_fpp"
+					],
+					"transitions": [{
+						"default": "!query.cooldown_time_remaining > 0.0"
+					}]
+				},
+				"boom_tpp": {
+					"animations": [
+						"shoot_tpp"
+					],
+					"transitions": [{
+						"default": "!query.cooldown_time_remaining > 0.0"
+					}]
+				}
+			}
+		}
+	}
+}

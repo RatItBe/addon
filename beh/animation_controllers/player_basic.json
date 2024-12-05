@@ -1,0 +1,317 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.player_gun_aiming": {
+			"initial_state": "default",
+			"states": {				
+				"default": {
+					"on_exit":["/camera @s fade time 0 0.01 0.05 color 0 0 0"],
+					"transitions": [						
+						{
+							"sniper": "q.is_sneaking && q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:sniper') && query.is_using_item"
+						},
+						{
+							"dmr": "(q.is_sneaking || q.is_riding) && q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:sniper') && query.is_using_item"
+						},
+						{
+							"no_scope":"q.is_sneaking && q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:lightly_armed')"
+						}
+					]
+				},
+				"sniper":{
+					"on_entry": ["/effect @s slowness infinite 8 true"],
+					"transitions":[
+						{
+							"sniper_off":"!q.is_sneaking || !q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:sniper') || !query.is_using_item"
+						}
+					]
+				},
+				"dmr":{
+					"on_entry": ["/effect @s slowness 1000000 1 true"],
+					"transitions":[
+						{
+							"sniper_off":"(!q.is_sneaking || !q.is_riding) && !q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:sniper') || !query.is_using_item"
+						}
+					]
+				},
+				"no_scope":{
+					"on_exit":["/camera @s fade time 0.05 0.025 0.05 color 0 0 0"],
+					"transitions":[
+						{
+							"sniper_off":"!q.is_sneaking || !q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:lightly_armed')"
+						}
+					]
+				},
+				"sniper_off":{
+					"on_entry": ["/effect @s slowness 0 0 true"],
+					"transitions":[
+						{
+							"default":"!q.is_sneaking || !q.equipped_item_all_tags('slot.weapon.mainhand','fs:gun','fs:sniper') || !query.is_using_item"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.health":{
+			"initial_state":"default",
+			"states":{
+				"default":{
+					"transitions":[
+						{
+							"0":"q.health == 0"
+						},
+						{
+							"1":"q.health == 1"
+						},
+						{
+							"2":"q.health == 2"
+						},
+						{
+							"3":"q.health == 3"
+						},
+						{
+							"4":"q.health == 4"
+						},
+						{
+							"5":"q.health == 5"
+						},
+						{
+							"6":"q.health == 6"
+						},
+						{
+							"7":"q.health == 7"
+						},
+						{
+							"8":"q.health == 8"
+						},
+						{
+							"9":"q.health == 9"
+						},
+						{
+							"10":"q.health == 10"
+						},
+						{
+							"11":"q.health == 11"
+						},
+						{
+							"12":"q.health == 12"
+						},
+						{
+							"13":"q.health == 13"
+						},
+						{
+							"14":"q.health == 14"
+						},
+						{
+							"15":"q.health == 15"
+						},
+						{
+							"16":"q.health == 16"
+						},
+						{
+							"17":"q.health == 17"
+						},
+						{
+							"18":"q.health == 18"
+						},
+						{
+							"19":"q.health == 19"
+						},
+						{
+							"20":"q.health == 20"
+						}
+					]
+				},
+				"0":{
+					"on_entry":["/scoreboard players set @s health 0"],
+					"transitions":[
+						{
+							"default":"q.health != 0"
+						}
+					]
+				},
+				"1":{
+					"on_entry":["/scoreboard players set @s health 1"],
+					"transitions":[
+						{
+							"default":"q.health != 1"
+						}
+					]
+				},
+				"2":{
+					"on_entry":["/scoreboard players set @s health 2"],
+					"transitions":[
+						{
+							"default":"q.health != 2"
+						}
+					]
+				},
+				"3":{
+					"on_entry":["/scoreboard players set @s health 3"],
+					"transitions":[
+						{
+							"default":"q.health != 3"
+						}
+					]
+				},
+				"4":{
+					"on_entry":["/scoreboard players set @s health 4"],
+					"transitions":[
+						{
+							"default":"q.health != 4"
+						}
+					]
+				},
+				"5":{
+					"on_entry":["/scoreboard players set @s health 5"],
+					"transitions":[
+						{
+							"default":"q.health != 5"
+						}
+					]
+				},
+				"6":{
+					"on_entry":["/scoreboard players set @s health 6"],
+					"transitions":[
+						{
+							"default":"q.health != 6"
+						}
+					]
+				},
+				"7":{
+					"on_entry":["/scoreboard players set @s health 7"],
+					"transitions":[
+						{
+							"default":"q.health != 7"
+						}
+					]
+				},
+				"8":{
+					"on_entry":["/scoreboard players set @s health 8"],
+					"transitions":[
+						{
+							"default":"q.health != 8"
+						}
+					]
+				},
+				"9":{
+					"on_entry":["/scoreboard players set @s health 9"],
+					"transitions":[
+						{
+							"default":"q.health != 9"
+						}
+					]
+				},
+				"10":{
+					"on_entry":["/scoreboard players set @s health 10"],
+					"transitions":[
+						{
+							"default":"q.health != 10"
+						}
+					]
+				},
+				"11":{
+					"on_entry":["/scoreboard players set @s health 11"],
+					"transitions":[
+						{
+							"default":"q.health != 11"
+						}
+					]
+				},
+				"12":{
+					"on_entry":["/scoreboard players set @s health 12"],
+					"transitions":[
+						{
+							"default":"q.health != 12"
+						}
+					]
+				},
+				"13":{
+					"on_entry":["/scoreboard players set @s health 13"],
+					"transitions":[
+						{
+							"default":"q.health != 13"
+						}
+					]
+				},
+				"14":{
+					"on_entry":["/scoreboard players set @s health 14"],
+					"transitions":[
+						{
+							"default":"q.health != 14"
+						}
+					]
+				},
+				"15":{
+					"on_entry":["/scoreboard players set @s health 15"],
+					"transitions":[
+						{
+							"default":"q.health != 15"
+						}
+					]
+				},
+				"16":{
+					"on_entry":["/scoreboard players set @s health 16"],
+					"transitions":[
+						{
+							"default":"q.health != 16"
+						}
+					]
+				},
+				"17":{
+					"on_entry":["/scoreboard players set @s health 17"],
+					"transitions":[
+						{
+							"default":"q.health != 17"
+						}
+					]
+				},
+				"18":{
+					"on_entry":["/scoreboard players set @s health 18"],
+					"transitions":[
+						{
+							"default":"q.health != 18"
+						}
+					]
+				},
+				"19":{
+					"on_entry":["/scoreboard players set @s health 19"],
+					"transitions":[
+						{
+							"default":"q.health != 19"
+						}
+					]
+				},
+				"20":{
+					"on_entry":["/scoreboard players set @s health 20"],
+					"transitions":[
+						{
+							"default":"q.health != 20"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.gamemode":{
+			"initial_state":"default",
+			"states":{
+				"default":{
+					"transitions":[
+						{
+							"survival":"q.scoreboard('gamemode') == 1"
+						}
+					]
+				},
+				"survival":{
+					"on_entry": ["/scoreboard players set @s gamemode 0"],
+					"on_exit": ["/gamemode s @s"],
+					"transitions":[
+						{
+							"default":"q.scoreboard('gamemode') != 1"
+						}
+					]
+				}
+			}
+		}
+	}
+}

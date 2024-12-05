@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:scout_pants",
+      "materials": {
+        "default": "armor",
+        "enchanted": "armor"
+      },
+      "textures": {
+        "default": "textures/models/armor/scout_lower",
+        "enchanted": "textures/models/armor/scout_lower"
+      },
+      "geometry": {
+        "default": "geometry.scout_lower"
+      },
+      "scripts": {
+        "parent_setup": "variable.helmet_layer_visible = 0.0; variable.chest_layer_visible = 0.0; variable.arm_layer_visible = 0.0;"
+      },
+      "render_controllers": [ "controller.render.armor" ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.shotty.wield": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{"fpp_hold":"c.is_first_person"},
+						{"tpp_hold":"!c.is_first_person"}
+					],
+					"transitions": [
+						{
+							"reload": "query.is_using_item"
+						},
+						{
+							"loaded":"q.item_is_charged"
+						}
+					]
+				},
+				"reload": {
+					"animations": [
+						{"reload":"c.is_first_person"},
+						{"reload_tpp":"!c.is_first_person"}
+					],
+					"transitions": [
+						{
+							"default": "!query.item_is_charged && !q.is_using_item"
+						},
+						{
+							"loaded":"q.item_is_charged"
+						}
+
+					]
+				},
+				"loaded":{
+					"animations":[
+						{
+							"loaded_fpp":"c.is_first_person"
+						},
+						{
+							"loaded_tpp":"!c.is_first_person"
+						}
+					],
+					"transitions":[
+						{
+							"default":"!q.item_is_charged"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shotty_e.wield": {
+			"initial_state": "first_person",
+			"states": {
+				"first_person": {
+					"animations": [
+						{"fpp_hold":"!q.is_using_item"}
+					],
+					"transitions": [
+						{
+							"third_person": "!c.is_first_person"
+						}
+					]
+				},
+				"third_person": {
+					"animations": [
+						{"tpp_hold":"!q.is_using_item"}
+					],
+					"transitions": [
+						{
+							"first_person": "c.is_first_person"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.shotty.reloading": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"reload": "query.item_is_charged == 0"
+						}
+					]
+				},
+				"reload": {
+					"animations": [
+						{"reload":"c.is_first_person"},
+						{"reload_tpp":"!c.is_first_person"}
+					],
+					"transitions": [
+						{
+							"default": "query.item_is_charged"
+						}
+					]
+				}
+			}
+		}
+	}
+}

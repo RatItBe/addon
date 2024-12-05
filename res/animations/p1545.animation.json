@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.p1545.idle": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"upper": {
+					"position": [0, 0, -0.3],
+					"scale": [1, 1, 0.8]
+				}
+			}
+		},
+		"animation.p1545.fpp": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"p1545": {
+					"rotation": [-20, 60, -60]
+				}
+			}
+		},
+		"animation.p1545.tpp": {
+			"loop": "hold_on_last_frame"
+		}
+	}
+}

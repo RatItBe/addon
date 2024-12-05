@@ -1,0 +1,38 @@
+{
+  "format_version": "1.18.31",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs_shotty_e:bow",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/entity/shotty",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.shotty"
+      },
+      "particle_effects": {
+        "muzzle": "minecraft:basic_flame_particle"
+      },
+      "animations":{
+        "fpp_hold":"animation.shotty.fpp_e",
+        "tpp_hold":"animation.shotty.tpp_e",
+        "fpp_or_tpp":"controller.animation.shotty_e.wield",
+        "reload_controller":"controller.animation.shotty.reloading",
+        "reload":"animation.shotty.reload",
+        "reload_tpp":"animation.shotty.reload_tpp"
+      },
+      "scripts":{
+        "animate":[
+          "fpp_or_tpp",
+          "reload_controller"
+        ]
+      },
+      
+      "render_controllers": [ "controller.render.item_default" ]
+    }
+  }
+}

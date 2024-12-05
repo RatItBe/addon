@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:gunslinger_coat",
+      "materials": {
+        "default": "armor",
+        "enchanted": "armor"
+      },
+      "textures": {
+        "default": "textures/models/armor/gunslinger_coat",
+        "enchanted": "textures/models/armor/gunslinger_coat"
+      },
+      "geometry": {
+        "default": "geometry.gunslinger_coat"
+      },
+      "scripts": {
+        "parent_setup": "variable.helmet_layer_visible = 0.0; variable.chest_layer_visible = 0.0;"
+      },
+      "render_controllers": [ "controller.render.armor" ]
+    }
+  }
+}

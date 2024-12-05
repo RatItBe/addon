@@ -1,0 +1,38 @@
+{
+  "format_version": "1.18.31",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:pump_action",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/entity/pump_action",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.pump_action"
+      },
+      "animations":{
+        "fpp_hold":"animation.pump_action.fpp",
+        "tpp_hold":"animation.pump_action.tpp",
+        "fpp_or_tpp":"controller.animation.pump_action.wield",
+        "shot":"animation.pump_action.shot",
+        "pump_ctrl":"controller.animation.pump_action.shoot",
+        "aiming":"animation.pump_action.aiming"
+      },
+      "scripts":{
+        "animate":[
+          "fpp_or_tpp",
+          "pump_ctrl",
+          {
+            "aiming":"q.is_using_item"
+          }
+        ]
+      },
+      
+      "render_controllers": [ "controller.render.item_default" ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.gunslinger_coat.idle": {
+			"loop": true,
+			"bones": {
+				"pants_r": {
+					"rotation": ["math.abs(q.is_moving*60)", "-math.abs(q.is_moving*8)", "math.abs(q.is_moving*12)"]
+				},
+				"pants_l": {
+					"rotation": ["math.abs(q.is_moving*60)", "math.abs(q.is_moving*8)", "-math.abs(q.is_moving*12)"]
+				}
+			}
+		}
+	}
+}

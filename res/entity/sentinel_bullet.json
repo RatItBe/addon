@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "fs:sentinel_bullet",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/shell"
+      },
+      "particle_effects": {
+        "smoke": "fs:smoke"
+      },
+      "sound_effects": {
+        "spawned": "fs_sniper_single",
+        "reload":"fs_bolt_action"
+      },
+      "geometry": {
+        "default": "geometry.sentinel_bullet"
+      },
+      "animations": {
+        "idle": "animation.sentinel_bullet.smoke"
+      },
+      "scripts": {
+        "animate": [
+          "idle"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.shell"
+      ]
+    }
+  }
+}

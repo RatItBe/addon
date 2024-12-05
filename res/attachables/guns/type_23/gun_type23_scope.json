@@ -1,0 +1,36 @@
+{
+  "format_version": "1.18.31",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:type23_scope",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/type23",
+        "enchanted": "textures/entity/type23"
+      },
+      "geometry": {
+        "default": "geometry.type23"
+      },
+      "particle_effects": {
+        "muzzle": "fs:smoke"
+      },
+      "animations": {
+        "fpp_hold":"animation.type23.fpp",
+        "tpp_hold":"animation.type23.tpp",
+        "fpp_ctrl":"controller.animation.r306.aim"
+      },
+      "scripts": {
+        "animate":[
+          {"fpp_hold":"c.is_first_person"},
+          {"tpp_hold":"!c.is_first_person"}
+        ]
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

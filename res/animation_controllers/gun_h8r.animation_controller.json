@@ -1,0 +1,51 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.h8r.wield": {
+			"initial_state": "first_person",
+			"states": {
+				"first_person": {
+					"animations": [
+						"fpp"
+					],
+					"transitions": [
+						{
+							"third_person": "!c.is_first_person"
+						}
+					]
+				},
+				"third_person": {
+					"animations": [
+						"tpp"
+					],
+					"transitions": [
+						{
+							"first_person": "c.is_first_person"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.h8r.shoot": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						"shoot_idle"
+					],
+					"transitions": [{
+						"boom": "query.cooldown_time_remaining > 0.0"
+					}]
+				},
+				"boom": {
+					"animations": [
+						"shoot"
+					],
+					"transitions": [{
+						"default": "!query.cooldown_time_remaining > 0.0"
+					}]
+				}
+			}
+		}
+	}
+}

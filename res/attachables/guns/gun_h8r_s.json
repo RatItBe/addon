@@ -1,0 +1,40 @@
+{
+  "format_version": "1.18.31",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:H8R_L_s",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/entity/h8r",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.h8r"
+      },
+      "particle_effects": {
+        "muzzle": "minecraft:basic_flame_particle"
+      },
+      "animations":{
+        "fpp":"animation.h8r.fpp",
+        "fpp_run":"animation.h8r.fpp_run",
+        "tpp":"animation.h8r.tpp",
+        "tpp_run":"animation.h8r.tpp_run",
+        "fpp_or_tpp":"controller.animation.h8r.wield",
+        "shoot":"animation.h8r.shoot",
+        "shoot_idle":"animation.h8r.shoot_idle",
+        "shoot_controller":"controller.animation.h8r.shoot"
+      },
+      "scripts":{
+        "animate":[
+          "fpp_or_tpp",
+          "shoot_controller"
+        ]
+      },
+      
+      "render_controllers": [ "controller.render.item_default" ]
+    }
+  }
+}

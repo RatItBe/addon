@@ -1,0 +1,102 @@
+{
+    "format_version": "1.16.230",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "fs:shotgun_pellet",
+            "runtime_identifier":"minecraft:arrow",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "despawn":{
+                "minecraft:instant_despawn":{}
+            }
+        },
+        "components": {
+            "minecraft:timer":{
+                "looping":true,
+                "time_down_event":{
+                "event":"kill",
+                "target":"self"
+                },
+                "time": 0.5
+            },
+            "minecraft:projectile": {
+                "on_hit": {                    
+                    "impact_damage": {
+                        "damage": 30,
+                        "knockback": true,
+                        "destroy_on_hit": true,
+                        "semi_random_diff_damage":false
+                    },
+                    "stick_in_ground": {
+                        "shake_time": 0.35
+                    }
+                },
+                "power": 8,
+                "gravity": 0.01,
+                "uncertaintyBase": 10,
+                "uncertaintyMultiplier": 0,
+                "anchor": 1,
+                "inertia":0.1,
+                "offset": [
+                    0,
+                    -0.1,
+                    0
+                ],
+                "reflectOnHurt": false,
+                "multiple_targets": false
+            },
+            "minecraft:environment_sensor": {
+                "triggers": [
+                  {
+                    "filters": {
+                      "all_of": [
+                        {
+                          "test": "on_ground",
+                          "subject": "self"
+                        }
+                      ]
+                    },
+                    "event": "despawn",
+                    "target": "self"
+                  }
+                ]
+              },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 1
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:scale":0.1,
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 80.0,
+                    "max_dropped_ticks": 10,
+                    "use_motion_prediction_hints": true
+                }
+            }
+        },
+        "events": {
+            "despawn":{
+                "add":{
+                    "component_groups":[
+                        "despawn"
+                    ]
+                }
+            },
+            "kill"   : {
+                "add": {
+                    "component_groups":[
+                        "despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

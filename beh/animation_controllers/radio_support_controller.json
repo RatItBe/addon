@@ -1,0 +1,122 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.radio_support": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": ["/tag @s add null_support","/tag @s remove flare_support","/tag @s remove scout_support","/tag @s remove gas_support","/tag @s remove napalm_support","/tag @s remove bombard_support","/scoreboard players set @s radio_support 0"],
+					"transitions": [
+						{
+							"equipped": "q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						},
+						{
+							"flare_no_backpack": "q.scoreboard('radio_support') == 1 && !q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				},
+				"flare_no_backpack":{
+					"on_entry": ["/tag @s add flare_support","/titleraw @s actionbar {\"rawtext\":[{\"text\":\"현재 지원 단계 : \"},{\"score\":{\"name\":\"*\",\"objective\":\"radio_support\"}},{\"text\":\"추가 요청 위해 무전낭 착용\"}]}"],
+					"transitions": [
+						{
+							"equipped": "q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						},
+						{
+							"default": "q.scoreboard('radio_support') == 0"
+						}
+					]
+				},
+				"equipped": {
+					"on_entry": ["/tag @s add null_support","/tag @s remove flare_support","/tag @s remove scout_support","/tag @s remove gas_support","/tag @s remove napalm_support","/tag @s remove bombard_support"],
+					"transitions": [
+						{
+							"flare": "q.scoreboard('radio_support') == 1"
+						},
+						{
+							"scout": "q.scoreboard('radio_support') == 2"
+						},
+						{
+							"gas": "q.scoreboard('radio_support') == 4"
+						},
+						{
+							"napalm": "q.scoreboard('radio_support') == 7"
+						},
+						{
+							"bombard": "q.scoreboard('radio_support') == 11"
+						},
+						{
+							"default": "!q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				},
+				"flare":{
+					"on_entry": ["/tag @s add flare_support","/title @s actionbar 조명탄 지원 준비됨"],
+					"transitions": [
+						{
+							"scout": "q.scoreboard('radio_support') >= 2"
+						},
+						{
+							"equipped": "q.scoreboard('radio_support') == 0"
+						},
+						{
+							"default": "!q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				},
+				"scout":{
+					"on_entry": ["/tag @s add scout_support","/tag @s remove flare_support","/title @s actionbar 정찰 지원 준비됨"],
+					"transitions": [
+						{
+							"gas": "q.scoreboard('radio_support') >= 4"
+						},
+						{
+							"equipped": "q.scoreboard('radio_support') == 0"
+						},
+						{
+							"default": "!q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				},
+				"gas":{
+					"on_entry": ["/tag @s add gas_support","/tag @s remove scout_support","/title @s actionbar 가스 타격 준비됨"],
+					"transitions": [
+						{
+							"napalm": "q.scoreboard('radio_support') >= 7"
+						},
+						{
+							"equipped": "q.scoreboard('radio_support') == 0"
+						},
+						{
+							"default": "!q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				},
+				"napalm":{
+					"on_entry": ["/tag @s add napalm_support","/tag @s remove gas_support","/title @s actionbar 네이팜 타격 준비됨"],
+					"transitions": [
+						{
+							"bombard": "q.scoreboard('radio_support') >= 11"
+						},
+						{
+							"equipped": "q.scoreboard('radio_support') == 0"
+						},
+						{
+							"default": "!q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				},
+				"bombard":{
+					"on_entry": ["/tag @s add bombard_support","/tag @s remove napalm_support","/title @s actionbar 포격 지원 준비됨"],
+					"transitions": [
+						{
+							"equipped": "q.scoreboard('radio_support') == 0"
+						},
+						{
+							"default": "!q.equipped_item_all_tags('slot.weapon.offhand','fs:backpack', 'fs:radio')"
+						}
+					]
+				}
+			}
+		}
+	}
+}
