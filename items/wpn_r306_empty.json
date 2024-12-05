@@ -2,7 +2,7 @@
     "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
-            "identifier": "fs:r306_l",
+            "identifier": "fs:r306_e",
             "menu_category": {
                 "category": "equipment"
             }
@@ -22,20 +22,13 @@
             },
             "minecraft:damage": 4,
             "minecraft:hand_equipped": false,
-            "minecraft:icon": "R306",
-            "minecraft:durability": {
-                "damage_chance": {
-                    "min": 0,
-                    "max": 0
-                },
-                "max_durability": 93
-            },
+            "minecraft:icon": "R306_E",
             "minecraft:display_name": {
-                "value": "R306 [§aⓧ§f]§r"
+                "value": "R306 [EMPTY]"
             },
             "minecraft:use_modifiers": {
-                "use_duration": 600,
-                "movement_modifier": 0.8
+                "use_duration": 4,
+                "movement_modifier": 0.4
             }
         }
     }

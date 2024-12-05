@@ -1,0 +1,13 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.h8r.last" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations": [ "h8r" ]					
+			}
+			}
+		}		
+	}
+}

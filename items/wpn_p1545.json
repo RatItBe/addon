@@ -2,7 +2,7 @@
     "format_version": "1.21.40",
     "minecraft:item": {
         "description": {
-            "identifier": "fs:r306_l",
+            "identifier": "fs:p1545_l",
             "menu_category": {
                 "category": "equipment"
             }
@@ -16,26 +16,23 @@
             },
             "minecraft:max_stack_size": 1,
             "minecraft:shooter": {
-                "max_draw_duration": 1,
+                "max_draw_duration": 0.05,
                 "charge_on_draw": false,
                 "scale_power_by_draw_duration": false
             },
-            "minecraft:damage": 4,
+            "minecraft:damage": 3,
             "minecraft:hand_equipped": false,
-            "minecraft:icon": "R306",
-            "minecraft:durability": {
-                "damage_chance": {
-                    "min": 0,
-                    "max": 0
-                },
-                "max_durability": 93
-            },
+            "minecraft:icon": "p1545",
             "minecraft:display_name": {
-                "value": "R306 [§aⓧ§f]§r"
+                "value": "P1545 [§aⓧ§f]§r"
             },
             "minecraft:use_modifiers": {
-                "use_duration": 600,
-                "movement_modifier": 0.8
+                "use_duration": 0.05,
+                "movement_modifier": 0.2
+            },
+            "minecraft:cooldown": {
+                "category":"p1545_shoot",
+                "duration":0.01
             }
         }
     }

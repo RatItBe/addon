@@ -1,0 +1,17 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "FS_NEW_RES",
+        "description": "Resource pack for FS",
+        "uuid": "7a4ec5a8-daa6-459b-9cfc-f8e66d0f9cbf",
+        "version": [0, 0, 4],
+        "min_engine_version": [1, 16, 0]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "35d66ef2-1402-4be3-8f94-36eb90e575fc",
+            "version": [0, 0, 4]
+        }
+    ]
+}

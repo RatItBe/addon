@@ -1,0 +1,21 @@
+{
+    "resource_pack_name" : "Friedsoboro",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "R306": {
+            "textures": "textures/items/R306"
+        },
+        "R306_E": {
+            "textures": "textures/items/R306_E"
+        },
+        "R306_ammo":{
+            "textures": "textures/items/R306_ammo"
+        },
+        "p1545": {
+            "textures": "textures/items/p1545"
+        },
+        "p1545_ammo": {
+            "textures": "textures/items/p1545_ammo"
+        }
+    }
+}
