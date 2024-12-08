@@ -4,11 +4,11 @@ export function itemUse(eventData) {
     const item = eventData.itemStack; // 사용된 아이템을 item 변수에 저장
     const player = eventData.source; // 아이템 사용자를 player 변수에 저장
 
-    if (item.typeId === "fs:p1545_l" && player.isSneaking) {
+    if (item.typeId === "fs:mg50" && player.isSneaking) {
         shootMachinegun(player);
         system.runTimeout(() => {
             shootMachinegun(player);
-        },2)
+        },5)
     }
 
     else if (item.typeId === "fs:r306_reward") { //r306_reward 를 사용한다면
@@ -38,7 +38,7 @@ function shootMachinegun(player) {
             else {
                 const viewDirection = player.getViewDirection(); // 플레이어 시선 각도 저장
                 const baseSpeed = 8; // 탄알 속도 설정 (총마다 다르게 부여하면 됨)
-                const angleSpread = 0.1; // 퍼짐 각도 설정 (이것도 총마다 다르게 부여)
+                const angleSpread = 0.2; // 퍼짐 각도 설정 (이것도 총마다 다르게 부여)
                 const spawnPos = { // 탄알이 생성될 위치 결정
                     x: player.location.x + viewDirection.x,
                     y: player.location.y + 1.5,
@@ -56,7 +56,7 @@ function shootMachinegun(player) {
                     z: offsetZ * baseSpeed,
                 });
                 player.runCommandAsync("playsound mob.ravager.step @s ~~~ 5 2 1"); // 발사 소리 재생
-                player.runCommandAsync("camerashake add @s 0.1 0.1 positional"); // 카메라 흔들림
+                player.runCommandAsync("camerashake add @s 0.5 0.1 positional"); // 카메라 흔들림
                 if (player.getGameMode() != "creative") {
                     ammo.damage++; // 크리에이티브가 아닐 때 내구도 감소 = 탄약 소비
                     offhand.setItem(machinegun); // 아이템 상태 갱신 = 인게임에 감소된 내구도를 반영

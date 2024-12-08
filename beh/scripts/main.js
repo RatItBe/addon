@@ -29,10 +29,10 @@ world.afterEvents.playerSpawn.subscribe((eventData) => {
     playerSpawn(eventData);
 });
 
-//블록과 상호작용 시 실행될 코드
-import { playerInteractWithBlock } from "playerInteractWithBlock/index";
+//블록과 상호작용 직전 실행될 코드
+import { playerInteractBlockB } from "playerInteractBlock/before";
 world.beforeEvents.playerInteractWithBlock.subscribe((eventData) => { 
-    playerInteractWithBlock(eventData);
+    playerInteractBlockB(eventData);
 });
 
 //게임 내내 반복될 코드 (1틱에 1번)
@@ -55,4 +55,11 @@ system.runInterval(() => {
 import { entityHurt } from "entityHurt/index";
 world.afterEvents.entityHurt.subscribe((eventData) => {
     entityHurt(eventData);
+});
+
+
+//엔티티가 탄알에 맞는 순간 실행될 코드
+import { projectileHitEntity } from 'projectileHitEntity/index';
+world.afterEvents.projectileHitEntity.subscribe((eventData) => {
+    projectileHitEntity(eventData);
 });

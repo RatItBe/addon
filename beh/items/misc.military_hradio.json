@@ -10,11 +10,12 @@
         "components": {
             "minecraft:tags": {
                 "tags": [
+                    "fs:radio"
                 ]
             },
             "minecraft:shooter": {
-                "max_draw_duration": 5,
-                "charge_on_draw": true,
+                "max_draw_duration": 9999,
+                "charge_on_draw": false,
                 "scale_power_by_draw_duration": false,
                 "ammunition": [
                     {
@@ -40,15 +41,13 @@
                 "value": "무전기 테스트"
             },
             "minecraft:use_modifiers": {
-              "movement_modifier": 0.2,
-              "use_duration": 5.25
+              "movement_modifier": 0.001,
+              "use_duration": 9999
             },
             "minecraft:cooldown": {
                 "category":"hand_radio",
                 "duration":4
             }
-        },
-        "events": {
         }
     }
 }

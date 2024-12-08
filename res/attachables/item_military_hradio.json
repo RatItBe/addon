@@ -14,16 +14,25 @@
       "geometry": {
         "default": "geometry.military_hradio"
       },
+      "sound_effects": {
+        "spawned": "fs_radio_signal"
+      },
       "animations":{
         "fpp_hold":"animation.m_radio_h.fpp",
         "tpp_hold":"animation.m_radio_h.tpp",
-        "using":"animation.military_radio_h_using",
         "fpp_or_tpp":"controller.animation.radio.wield",
-        "charging":"animation.m_radio_h.charging"
+        "charging":"animation.m_radio_h.charging",
+        "charging_ctrl":"controller.animation.hand_radio.charging"
       },
       "scripts":{
         "animate":[
-          "fpp_or_tpp"
+          {
+            "fpp_hold":"c.is_first_person"
+          },
+          {
+            "tpp_hold":"!c.is_first_person"
+          },
+          "charging_ctrl"
         ]
       },
       

@@ -2,7 +2,7 @@
   "format_version": "1.18.31",
   "minecraft:attachable": {
     "description": {
-      "identifier": "fs:r306_l",
+      "identifier": "fs:r306_mk2_e",
       "materials": {
         "default": "entity_emissive_alpha",
         "enchanted": "entity_alphatest_glint"
@@ -21,12 +21,14 @@
         "fpp_hold":"animation.r306.fpp",
         "tpp_hold":"animation.r306.tpp",
         "fpp_aim":"animation.r306.fpp_aim",
-        "fpp_ctrl":"controller.animation.r306.aim"
+        "fpp_ctrl":"controller.animation.r306.aim",
+        "reload":"animation.r306.reload"
       },
       "scripts":{
         "animate":[
-          {"fpp_ctrl":"c.is_first_person"},
-          {"tpp_hold":"!c.is_first_person"}
+          {"fpp_hold":"c.is_first_person"},
+          {"tpp_hold":"!c.is_first_person"},
+          {"reload":"q.is_using_item"}
         ]
       },
       

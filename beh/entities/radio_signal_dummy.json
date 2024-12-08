@@ -53,6 +53,7 @@
                 "minecraft:movement": {
                     "value": 0.01
                 },
+                "minecraft:movement.basic": {},
                 "minecraft:navigation.generic": {},
                 "minecraft:timer": {
                     "looping": true,
@@ -117,14 +118,6 @@
         "events": {
             "minecraft:entity_spawned": {
                 "sequence": [
-                    {
-                        "filters": {
-                            "test": "is_sneaking",
-                            "subject": "other",
-                            "operator": "==",
-                            "value": false
-                        },
-                        "sequence": [
                             {
                                 "filters": {
                                     "all_of": [
@@ -147,7 +140,8 @@
                                     "command": [
                                         "scoreboard players set @s radio_support 0",
                                         "title @s title ⦸",
-                                        "title @s subtitle 요청된 지원 없음"
+                                        "title @s subtitle 요청된 지원 없음",
+                                        "tag @s remove null_support"
                                     ]
                                 },
                                 "add": {
@@ -169,7 +163,8 @@
                                         "scoreboard players set @s radio_support 0",
                                         "effect @a[r=100] night_vision 300 0 true",
                                         "title @a[r=100] title §6✵",
-                                        "title @a[r=100] subtitle 조명탄 지원됨"
+                                        "title @a[r=100] subtitle 조명탄 지원됨",
+                                        "tag @s remove flare_support"
                                     ]
                                 },
                                 "add": {
@@ -194,7 +189,8 @@
                                     "command": [
                                         "scoreboard players set @s radio_support 0",
                                         "title @a[r=100] title §7❨ ⊹ ❩",
-                                        "title @a[r=100] subtitle 정찰 지원됨"
+                                        "title @a[r=100] subtitle 정찰 지원됨",
+                                        "tag @s remove scout_support"
                                     ]
                                 },
                                 "add": {
@@ -218,7 +214,8 @@
                                         "title @a[r=100] subtitle 가스 타격 지원됨",
                                         "effect @e[r=100,family=monster] slowness 300 2",
                                         "effect @e[r=100,family=monster] poison infinite 5",
-                                        "effect @e[r=100,family=monster] weakness infinite 0"
+                                        "effect @e[r=100,family=monster] weakness infinite 0",
+                                        "tag @s remove gas_support"
                                     ]
                                 },
                                 "add": {
@@ -240,7 +237,8 @@
                                         "scoreboard players set @s radio_support 0",
                                         "title @a[r=100] title §5ᖪ ꙰ ᖬ",
                                         "title @a[r=100] subtitle 네이팜 타격 지원됨",
-                                        "effect @a[r=100] night_vision 300 0 true"
+                                        "effect @a[r=100] night_vision 300 0 true",
+                                        "tag @s remove napalm_support"
                                     ]
                                 },
                                 "add": {
@@ -262,7 +260,8 @@
                                         "scoreboard players set @s radio_support 0",
                                         "title @a title §cᖪ ⏚ ᖬ",
                                         "title @a[r=100] subtitle 포격 지원 실행됨",
-                                        "teleport @e[r=2,type=fs:radio_signal_dummy] ~ ~50 ~"
+                                        "teleport @e[r=2,type=fs:radio_signal_dummy] ~ ~50 ~",
+                                        "tag @s remove bombard_support"
                                     ]
                                 },
                                 "add": {
@@ -272,148 +271,6 @@
                                 }
                             }
                         ]
-                    },
-                    {
-                        "filters": {
-                            "test": "is_sneaking",
-                            "subject": "other",
-                            "operator": "==",
-                            "value": true
-                        },
-                        "sequence": [
-                            {
-                                "filters": {
-                                    "all_of": [
-                                        {
-                                            "test": "has_equipment",
-                                            "subject": "other",
-                                            "domain": "hand",
-                                            "operator": "equals",
-                                            "value": "fs:radio_backpack"
-                                        },
-                                        {
-                                            "test": "has_tag",
-                                            "subject": "other",
-                                            "operator": "not",
-                                            "value": "bombard_support"
-                                        }
-                                    ]
-                                },
-                                "queue_command": {
-                                    "target": "other",
-                                    "command": [
-                                        "scoreboard players add @s radio_support 1",
-                                        "titleraw @s actionbar {\"rawtext\":[{\"text\":\"현재 지원 단계 : \"},{\"score\":{\"name\":\"*\",\"objective\":\"radio_support\"}}]}"
-                                    ]
-                                },
-                                "add": {
-                                    "component_groups": [
-                                        "despawn"
-                                    ]
-                                }
-                            },
-                            {
-                                "filters": {
-                                    "all_of": [
-                                        {
-                                            "test": "has_equipment",
-                                            "subject": "other",
-                                            "domain": "hand",
-                                            "operator": "not",
-                                            "value": "fs:radio_backpack"
-                                        },
-                                        {
-                                            "test": "has_tag",
-                                            "subject": "other",
-                                            "operator": "not",
-                                            "value": "flare_support"
-                                        }
-                                    ]
-                                },
-                                "queue_command": {
-                                    "target": "other",
-                                    "command": [
-                                        "scoreboard players add @s radio_support 1",
-                                        "titleraw @s actionbar {\"rawtext\":[{\"text\":\"현재 지원 단계 : \"},{\"score\":{\"name\":\"*\",\"objective\":\"radio_support\"}},{\"text\":\"추가 요청 위해 무전낭 착용\"}]}"
-                                    ]
-                                },
-                                "add": {
-                                    "component_groups": [
-                                        "despawn"
-                                    ]
-                                }
-                            },
-                            {
-                                "filters": {
-                                    "all_of": [
-                                        {
-                                            "test": "has_equipment",
-                                            "subject": "other",
-                                            "domain": "hand",
-                                            "operator": "equals",
-                                            "value": "fs:radio_backpack"
-                                        },
-                                        {
-                                            "test": "has_tag",
-                                            "subject": "other",
-                                            "operator": "equals",
-                                            "value": "bombard_support"
-                                        },
-                                        {
-                                            "test": "is_sneaking",
-                                            "subject": "other",
-                                            "operator": "==",
-                                            "value": true
-                                        }
-                                    ]
-                                },
-                                "queue_command": {
-                                    "target": "other",
-                                    "command": [
-                                        "title @s title §c⚠",
-                                        "title @a subtitle §c추가 지원 요청 불가. 최대 지원 요청 단계"
-                                    ]
-                                },
-                                "add": {
-                                    "component_groups": [
-                                        "despawn"
-                                    ]
-                                }
-                            },
-                            {
-                                "filters": {
-                                    "all_of": [
-                                        {
-                                            "test": "has_equipment",
-                                            "subject": "other",
-                                            "domain": "hand",
-                                            "operator": "not",
-                                            "value": "fs:radio_backpack"
-                                        },
-                                        {
-                                            "test": "has_tag",
-                                            "subject": "other",
-                                            "operator": "equals",
-                                            "value": "flare_support"
-                                        }
-                                    ]
-                                },
-                                "queue_command": {
-                                    "target": "other",
-                                    "command": [
-                                        "title @s title §c⚠",
-                                        "title @a subtitle §c추가 지원 요청 불가. 무전낭 필요"
-                                    ]
-                                },
-                                "add": {
-                                    "component_groups": [
-                                        "despawn"
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                ]
             },
             "despawn": {
                 "add": {

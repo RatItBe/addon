@@ -21,8 +21,6 @@
 					"default":"shotgun_ammo"
 				}
 			}
-        },
-        "events": {
         }
     }
 }

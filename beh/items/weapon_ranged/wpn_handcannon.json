@@ -50,7 +50,6 @@
             "minecraft:display_name": {
                 "value": "대공포"
             }
-        },
-        "events": {}
+        }
     }
 }

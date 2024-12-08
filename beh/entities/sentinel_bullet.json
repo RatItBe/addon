@@ -104,7 +104,7 @@
                 "event":"kill",
                 "target":"self"
                 },
-                "time": 7
+                "time": 3
             },
             "minecraft:projectile": {
                 "on_hit": {                    

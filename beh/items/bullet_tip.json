@@ -17,8 +17,6 @@
             "minecraft:icon": {
                 "texture":"shotgun_ammo"
             }
-        },
-        "events": {
         }
     }
 }

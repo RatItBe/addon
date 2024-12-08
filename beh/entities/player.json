@@ -9,7 +9,9 @@
       "animations": {
         "gun_aiming": "controller.animation.player_gun_aiming",
         "player_health": "controller.animation.player.health",
-        "radio_support": "controller.animation.radio_support"
+        "radio_support": "controller.animation.radio_support",
+        "radio_timer":"animation.radio_timer",
+        "radio_timer_w_bag":"animation.radio_timer_w_bag"
       },
       "scripts": {
         "animate": [

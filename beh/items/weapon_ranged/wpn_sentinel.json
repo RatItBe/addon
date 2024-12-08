@@ -49,8 +49,6 @@
             "minecraft:display_name": {
                 "value": "저격소총"
             }
-        },
-        "events": {
         }
     }
 }

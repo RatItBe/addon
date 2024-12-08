@@ -11,7 +11,7 @@
 			"minecraft:tags": {
                 "tags": [
                     "fs:radio",
-                    "fs:backpack"
+                    "fs:radio_backpack"
                 ]
             },
 			"minecraft:icon": {

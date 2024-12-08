@@ -33,26 +33,36 @@
 			"states": {
 				"default": {
 					"transitions": [{
-						"boom_fpp": "query.cooldown_time_remaining > 0.0 && c.is_first_person"
-					},
-					{
-						"boom_tpp": "query.cooldown_time_remaining > 0.0 && !c.is_first_person"
+						"shoot_rdy":"q.is_using_item"
 					}]
 				},
-				"boom_fpp": {
-					"animations": [
-						"shoot_fpp"
-					],
+				"shoot_rdy":{
 					"transitions": [{
-						"default": "!query.cooldown_time_remaining > 0.0"
+						"shoot":"!q.is_using_item"
 					}]
 				},
-				"boom_tpp": {
+				"shoot":{
+					"animations":["shoot"],
+					"transitions": [{
+						"default":"!q.is_using_item && q.all_animations_finished"
+					}]
+				}
+			}
+		},
+		"controller.animation.r306.reload": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [{
+						"reload": "q.is_using_item"
+					}]
+				},
+				"reload": {
 					"animations": [
-						"shoot_tpp"
+						"reload"
 					],
 					"transitions": [{
-						"default": "!query.cooldown_time_remaining > 0.0"
+						"default": "!q.is_using_item"
 					}]
 				}
 			}

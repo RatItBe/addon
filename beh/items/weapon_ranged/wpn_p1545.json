@@ -10,8 +10,7 @@
         "components": {
             "minecraft:tags": {
                 "tags": [
-                    "fs:gun",
-                    "fs:sniper"
+                    "fs:gun"
                 ]
             },
             "minecraft:max_stack_size": {

@@ -8,9 +8,11 @@
 			}
 		},
 		"components": {
-			"minecraft:icon": {
-				"texture": "shotgun_belt"
-			},
+            "minecraft:icon": {
+                "textures": {
+                    "default":"shotgun_belt"
+                }
+            },
 			"minecraft:display_name": {
 				"value": "§l§6산탄총 탄띠"
 			},

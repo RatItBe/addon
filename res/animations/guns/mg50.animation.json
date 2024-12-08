@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mg50.fpp": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"hmg": {
+					"rotation": [-20, "40+math.abs((q.is_sneaking*20))", "-87.5+math.abs((q.is_sneaking*27.5))"],
+					"position": [0.0029, 1.17908, 3.51303],
+					"scale": 4
+				},
+				"forwardgrip": {
+					"rotation": [-22.5, 0, 0],
+					"position": [0, 0, 0.2],
+					"scale": 0.4
+				}
+			}
+		},
+		"animation.mg50.tpp": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"forwardgrip": {
+					"rotation": [-22.5, 0, 0],
+					"position": [0, 0, 0.2],
+					"scale": 0.4
+				},
+				"hmg": {
+					"rotation": [0, 0, "-30+math.abs(30*q.is_sneaking)"],
+					"position": [0, 4, 5.5],
+					"scale": 1.5
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "format_version": "1.18.31",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "fs:r306_mk1_l",
+      "materials": {
+        "default": "entity_emissive_alpha",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/entity/r306",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.r306"
+      },
+      "particle_effects": {
+        "muzzle": "minecraft:basic_flame_particle"
+      },
+      "animations":{
+        "fpp_hold":"animation.r306.fpp",
+        "tpp_hold":"animation.r306.tpp",
+        "fpp_aim":"animation.r306.fpp_aim",
+        "fpp_ctrl":"controller.animation.r306.aim",
+        "shoot":"animation.r306.shoot",
+        "shoot_ctrl":"controller.animation.r306.shoot"
+      },
+      "scripts":{
+        "animate":[
+          {"fpp_ctrl":"c.is_first_person"},
+          {"tpp_hold":"!c.is_first_person"},
+          "shoot_ctrl"
+        ]
+      },
+      
+      "render_controllers": [ "controller.render.item_default" ]
+    }
+  }
+}

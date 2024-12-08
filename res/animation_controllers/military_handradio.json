@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.hand_radio.charging": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"charging": "q.is_using_item && q.is_sneaking"
+						}
+					]
+				},
+				"charging": {
+					"animations": [
+						"charging"
+					],
+					"transitions": [
+						{
+							"idle": "!q.is_using_item && !q.is_sneaking"
+						}
+					]
+				}
+			}
+		}
+	}
+}

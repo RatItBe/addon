@@ -45,8 +45,6 @@
                 "movement_modifier": 0.5,
                 "use_duration": 9999
             }
-        },
-        "events": {
         }
     }
 }

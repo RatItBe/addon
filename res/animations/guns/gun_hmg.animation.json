@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mg50.fpp": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"hmg": {
+					"rotation": [-20, "60-math.abs((q.is_sprinting*20))", "-60-math.abs((q.is_sprinting*27.5))"],
+					"position": [0.6686, 0.45272, 3.34202],
+					"scale": 3
+				},
+				"forwardgrip": {
+					"rotation": [-22.5, 0, 0],
+					"position": [0, 0, 0.2],
+					"scale": 0.4
+				},
+				"ammo_belt": {
+					"position": [-1, 0, 0]
+				},
+				"casings": {
+					"scale": 0.8
+				},
+				"belt": {
+					"scale": 0.8
+				}
+			}
+		}
+	}
+}

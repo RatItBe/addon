@@ -19,6 +19,12 @@
 				"sounds/sniper_single"
 			]
 		},
+		"fs_radio_signal": {
+			"category": "player",
+			"sounds": [
+				"sounds/radio_signal"
+			]
+		},
 		"fs_shotgun_fire": {
 			"category": "player",
 			"sounds": [

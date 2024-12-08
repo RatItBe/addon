@@ -17,9 +17,10 @@
             },
             "minecraft:allow_off_hand": false,
             "minecraft:icon": {
-                "texture":"sniper_ammo"
+                "textures": {
+                    "default":"sniper_ammo"
+                }
             }
-        },
-        "events": {}
+        }
     }
 }

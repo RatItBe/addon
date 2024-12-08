@@ -16,7 +16,11 @@
                 "value":"P1545 탄창 [§aⓧ§f]§r"
             },
             "minecraft:allow_off_hand": true,
-            "minecraft:icon": "p1545_ammo",
+            "minecraft:icon": {
+                "textures": {
+                    "default":"p1545_ammo"
+                }
+            },
             "minecraft:durability": {
                 "damage_chance": {
                     "min": 0,
